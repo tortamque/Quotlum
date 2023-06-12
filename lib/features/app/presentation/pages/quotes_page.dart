@@ -17,7 +17,10 @@ class _QuotesPageState extends State<QuotesPage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: QuoteCard()
+      body: QuoteCard(
+        text: "Doing what you love is the cornerstone of having abundance in your life.",
+        author: "Wayne Dyer",
+      )
     );
   }
 }
