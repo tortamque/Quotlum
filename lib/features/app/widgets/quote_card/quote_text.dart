@@ -12,9 +12,12 @@ class QuoteText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 5,
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Text(text),
+      child: Container(
+        color: Colors.transparent,
+        child: Align(
+          alignment: Alignment.center,
+          child: Text(text),
+        ),
       ),
     );
   }

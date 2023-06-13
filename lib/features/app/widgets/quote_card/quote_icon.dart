@@ -5,12 +5,15 @@ class QuoteIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Image.asset(
-        "assets/icons/quote.png",
-        width: 15,
-        height: 15,
+    return Container(
+      color: Colors.transparent,
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Image.asset(
+          "assets/icons/quote.png",
+          width: 15,
+          height: 15,
+        ),
       ),
     );
   }
