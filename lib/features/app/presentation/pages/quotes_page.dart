@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quotlum/features/app/widgets/background/background.dart';
-import 'package:quotlum/features/app/widgets/quote_card/quote_card_animation.dart';
-import 'package:quotlum/features/app/widgets/quote_card/quote_card_animation_style.dart';
+import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
+import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
+import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation_style.dart';
 
 class QuotesPage extends StatefulWidget {
   const QuotesPage({super.key, required this.title});
