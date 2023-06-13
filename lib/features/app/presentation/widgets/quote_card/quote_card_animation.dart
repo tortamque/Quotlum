@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_author.dart';
+import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card.dart';
-import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_icon.dart';
-import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_text.dart';
 
 class QuoteCardAnimation extends StatefulWidget {
-  final String text;
-  final String author;
+  final Quote quote;
 
   const QuoteCardAnimation({
-    required this.text,
-    required this.author,
-    Key? key,
-  }) : super(key: key);
+    required this.quote,
+    super.key,
+  });
 
   @override
   _QuoteCardAnimationState createState() => _QuoteCardAnimationState();
@@ -27,10 +23,9 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
     });
   }
 
-  QuoteCardAnimation _createQuote(){
+  QuoteCardAnimation _createQuote(BuildContext context){
     return QuoteCardAnimation(
-      text: 'Next Quote',
-      author: 'Next Author',
+      quote: Quote(text: "Quote from _createQuote", author: "Some author"),
       key: ValueKey('next'),
     );
   }
@@ -52,8 +47,8 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
           );
         },
         child: showNextQuote
-        ? _createQuote()
-        : QuoteCard(text: widget.text, author: widget.author)
+        ? _createQuote(context)
+        : QuoteCard(text: widget.quote.text, author: widget.quote.author)
       ),
     );
   }
