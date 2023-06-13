@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quotlum/features/app/data/data_sources/remote/quotes_client.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card.dart';
 
@@ -16,6 +17,8 @@ class QuoteCardAnimation extends StatefulWidget {
 
 class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   bool showNextQuote = false;
+  bool quoteFetched = false;
+  Quote? fetchedQuote;
 
   void _handleSwipeLeft() {
     setState(() {
@@ -23,11 +26,17 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
     });
   }
 
-  QuoteCardAnimation _createQuote(BuildContext context){
-    return QuoteCardAnimation(
-      quote: Quote(text: "Quote from _createQuote", author: "Some author"),
-      key: ValueKey('next'),
-    );
+  Future<void> _fetchQuote() async {
+    if (!quoteFetched) {
+      fetchedQuote = await QuotesClient.createQuote();
+      quoteFetched = true;
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchQuote();
   }
 
   @override
@@ -47,8 +56,11 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
           );
         },
         child: showNextQuote
-        ? _createQuote(context)
-        : QuoteCard(text: widget.quote.text, author: widget.quote.author)
+            ? QuoteCardAnimation(
+                quote: fetchedQuote!,
+                key: ValueKey('next'),
+              )
+            : QuoteCard(text: widget.quote.text, author: widget.quote.author),
       ),
     );
   }

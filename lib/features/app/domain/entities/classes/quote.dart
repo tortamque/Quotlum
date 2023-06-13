@@ -6,6 +6,4 @@ class Quote{
     required this.text,
     required this.author
   });
-
-  Quote.empty():text="", author="";
 }
