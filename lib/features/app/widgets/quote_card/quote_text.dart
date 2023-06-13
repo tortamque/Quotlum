@@ -15,7 +15,7 @@ class QuoteText extends StatelessWidget {
       child: Container(
         color: Colors.transparent,
         child: Align(
-          alignment: Alignment.centerLeft,
+          alignment: Alignment.center,
           child: Text(text),
         ),
       ),
