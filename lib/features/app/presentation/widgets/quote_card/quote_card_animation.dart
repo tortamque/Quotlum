@@ -32,7 +32,7 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   }
 
   QuoteCard _buildQuoteCard(Key key){
-    List fontWeights = [FontWeight.w400, FontWeight.w500, FontWeight.w600];
+    List fontWeights = [FontWeight.w300 ,FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
 
     FontWeight randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
 
