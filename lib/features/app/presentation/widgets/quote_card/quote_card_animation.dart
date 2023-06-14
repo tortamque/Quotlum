@@ -39,7 +39,6 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
     List fontWeights = [FontWeight.w400, FontWeight.w500, FontWeight.w600];
 
     FontWeight randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
-    print(randomFontWeight);
 
     return QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, quoteFontWeight: randomFontWeight, key: key);
   }
