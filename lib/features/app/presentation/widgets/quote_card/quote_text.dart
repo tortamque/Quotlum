@@ -4,11 +4,13 @@ class QuoteText extends StatelessWidget {
   final String text;
   final FontWeight fontWeight;
   final FontStyle fontStyle;
+  final int fontSize;
 
   const QuoteText({
     required this.text,
     required this.fontWeight,
     required this.fontStyle,
+    required this.fontSize,
     super.key
   });
 
@@ -26,6 +28,7 @@ class QuoteText extends StatelessWidget {
               style: TextStyle(
                 fontWeight: fontWeight,
                 fontStyle: fontStyle,
+                fontSize: fontSize.toDouble()
               ),
             ),
           ),
