@@ -32,22 +32,32 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   }
 
   QuoteCard _buildQuoteCard(Key key){
-    int minFontSize = 22;
-    int maxFontSize = 30;
-    List fontWeights = [FontWeight.w300 ,FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
-    List fontStyles = [FontStyle.normal, FontStyle.italic];
-
-    FontWeight randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
-    FontStyle randomFontStyle = fontStyles[Random().nextInt(fontStyles.length)];
-    int randomFontSize = minFontSize + Random().nextInt(maxFontSize - minFontSize + 1);
+    final quoteTextStyle = _generateRandomTextStyle();
 
     return QuoteCard(
-      text: fetchedQuote.text, 
-      author: fetchedQuote.author, 
-      quoteFontWeight: randomFontWeight, 
-      quoteFontStyle: randomFontStyle, 
-      quoteFontSize: randomFontSize, 
-      key: key
+      text: fetchedQuote.text,
+      author: fetchedQuote.author,
+      quoteFontWeight: quoteTextStyle.fontWeight!,
+      quoteFontStyle: quoteTextStyle.fontStyle!,
+      quoteFontSize: quoteTextStyle.fontSize!.toInt(),
+      key: key,
+    );
+  }
+
+  TextStyle _generateRandomTextStyle() {
+    final minFontSize = 22;
+    final maxFontSize = 30;
+    final fontWeights = [FontWeight.w300, FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
+    final fontStyles = [FontStyle.normal, FontStyle.italic];
+
+    final randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
+    final randomFontStyle = fontStyles[Random().nextInt(fontStyles.length)];
+    final randomFontSize = minFontSize + Random().nextInt(maxFontSize - minFontSize + 1);
+
+    return TextStyle(
+      fontWeight: randomFontWeight,
+      fontStyle: randomFontStyle,
+      fontSize: randomFontSize.toDouble(),
     );
   }
 
