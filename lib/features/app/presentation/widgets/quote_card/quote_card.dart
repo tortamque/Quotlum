@@ -9,6 +9,7 @@ class QuoteCard extends StatelessWidget {
   final FontWeight quoteFontWeight;
   final FontStyle quoteFontStyle;
   final int quoteFontSize;
+  final String quoteFontFamily;
 
   const QuoteCard({
     required this.text,
@@ -16,6 +17,7 @@ class QuoteCard extends StatelessWidget {
     required this.quoteFontWeight,
     required this.quoteFontStyle,
     required this.quoteFontSize,
+    required this.quoteFontFamily,
     super.key
   });
 
@@ -28,7 +30,7 @@ class QuoteCard extends StatelessWidget {
       child: Column(
         children: [
           const QuoteIcon(),
-          QuoteText(text: text, fontWeight: quoteFontWeight, fontStyle: quoteFontStyle, fontSize: quoteFontSize,),
+          QuoteText(text: text, fontWeight: quoteFontWeight, fontStyle: quoteFontStyle, fontSize: quoteFontSize, fontFamily: quoteFontFamily),
           QuoteAuthor(author: author)
         ],
       ),

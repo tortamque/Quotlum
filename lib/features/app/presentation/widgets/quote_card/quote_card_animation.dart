@@ -40,6 +40,7 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
       quoteFontWeight: quoteTextStyle.fontWeight!,
       quoteFontStyle: quoteTextStyle.fontStyle!,
       quoteFontSize: quoteTextStyle.fontSize!.toInt(),
+      quoteFontFamily: quoteTextStyle.fontFamily!,
       key: key,
     );
   }
@@ -49,15 +50,18 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
     final maxFontSize = 30;
     final fontWeights = [FontWeight.w300, FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
     final fontStyles = [FontStyle.normal, FontStyle.italic];
+    final fontFamilies = ["Montserrat", "Nunito", "Poppins", "Raleway", "RobotoMono"];
 
     final randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
     final randomFontStyle = fontStyles[Random().nextInt(fontStyles.length)];
     final randomFontSize = minFontSize + Random().nextInt(maxFontSize - minFontSize + 1);
+    final randomFontFamily = fontFamilies[Random().nextInt(fontFamilies.length)];
 
     return TextStyle(
       fontWeight: randomFontWeight,
       fontStyle: randomFontStyle,
       fontSize: randomFontSize.toDouble(),
+      fontFamily: randomFontFamily
     );
   }
 
