@@ -16,7 +16,7 @@ class QuoteCardAnimation extends StatefulWidget {
 }
 
 class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
-  bool showNextQuote = false;
+  bool swapQuotes = false;
   Quote fetchedQuote = Quote(text: 'Loading...\nPretend you don\'t see this text', author: ':D');
 
   void _handleAction() {
@@ -26,7 +26,7 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
           fetchedQuote = fetchedQuote;
         });
       });
-      showNextQuote = !showNextQuote;
+      swapQuotes = !swapQuotes;
     });
   }
 
@@ -60,9 +60,9 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
             child: child,
           );
         },
-        child: showNextQuote
-            ? QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: ValueKey('next'),)
-            : QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: ValueKey('prev'),)
+        child: swapQuotes
+            ? QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: const ValueKey('next'))
+            : QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: const ValueKey('previous'))
       ),
     );
   }
