@@ -6,18 +6,18 @@ import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_text.
 class QuoteCard extends StatelessWidget {
   final String text;
   final String author;
-  final FontWeight quoteFontWeight;
-  final FontStyle quoteFontStyle;
-  final int quoteFontSize;
-  final String quoteFontFamily;
+  final FontWeight fontWeight;
+  final FontStyle fontStyle;
+  final int fontSize;
+  final String fontFamily;
 
   const QuoteCard({
     required this.text,
     required this.author,
-    required this.quoteFontWeight,
-    required this.quoteFontStyle,
-    required this.quoteFontSize,
-    required this.quoteFontFamily,
+    required this.fontWeight,
+    required this.fontStyle,
+    required this.fontSize,
+    required this.fontFamily,
     super.key
   });
 
@@ -30,8 +30,8 @@ class QuoteCard extends StatelessWidget {
       child: Column(
         children: [
           const QuoteIcon(),
-          QuoteText(text: text, fontWeight: quoteFontWeight, fontStyle: quoteFontStyle, fontSize: quoteFontSize, fontFamily: quoteFontFamily),
-          QuoteAuthor(author: author)
+          QuoteText(text: text, fontWeight: fontWeight, fontStyle: fontStyle, fontSize: fontSize, fontFamily: fontFamily),
+          QuoteAuthor(author: author, fontWeight: fontWeight, fontFamily: fontFamily)
         ],
       ),
     );

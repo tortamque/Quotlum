@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class QuoteAuthor extends StatelessWidget {
   final String author;
+  final FontWeight fontWeight;
+  final String fontFamily;
 
   const QuoteAuthor({
     required this.author,
+    required this.fontWeight,
+    required this.fontFamily,
     super.key
   });
 
@@ -16,7 +20,15 @@ class QuoteAuthor extends StatelessWidget {
         color: Colors.transparent,
         child: Align(
           alignment: Alignment.centerLeft,
-          child: Text(author),
+          child: Text(
+            author,
+            style: TextStyle(
+              fontWeight: fontWeight,
+              fontFamily: fontFamily,
+              fontStyle: FontStyle.italic,
+              fontSize: 16
+            ),
+          ),
         ),
       )
     );

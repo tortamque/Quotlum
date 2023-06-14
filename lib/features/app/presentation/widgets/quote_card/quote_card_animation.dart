@@ -37,10 +37,10 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
     return QuoteCard(
       text: fetchedQuote.text,
       author: fetchedQuote.author,
-      quoteFontWeight: quoteTextStyle.fontWeight!,
-      quoteFontStyle: quoteTextStyle.fontStyle!,
-      quoteFontSize: quoteTextStyle.fontSize!.toInt(),
-      quoteFontFamily: quoteTextStyle.fontFamily!,
+      fontWeight: quoteTextStyle.fontWeight!,
+      fontStyle: quoteTextStyle.fontStyle!,
+      fontSize: quoteTextStyle.fontSize!.toInt(),
+      fontFamily: quoteTextStyle.fontFamily!,
       key: key,
     );
   }
