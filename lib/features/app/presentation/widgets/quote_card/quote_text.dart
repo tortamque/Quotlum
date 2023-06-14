@@ -20,11 +20,13 @@ class QuoteText extends StatelessWidget {
         color: Colors.transparent,
         child: Align(
           alignment: Alignment.center,
-          child: Text(
-            text,
-            style: TextStyle(
-              fontWeight: fontWeight,
-              fontStyle: fontStyle
+          child: SingleChildScrollView(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontWeight: fontWeight,
+                fontStyle: fontStyle,
+              ),
             ),
           ),
         ),
