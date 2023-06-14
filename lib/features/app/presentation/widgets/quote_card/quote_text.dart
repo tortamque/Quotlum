@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class QuoteText extends StatelessWidget {
   final String text;
   final FontWeight fontWeight;
+  final FontStyle fontStyle;
 
   const QuoteText({
     required this.text,
     required this.fontWeight,
+    required this.fontStyle,
     super.key
   });
 
@@ -21,7 +23,8 @@ class QuoteText extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              fontWeight: fontWeight
+              fontWeight: fontWeight,
+              fontStyle: fontStyle
             ),
           ),
         ),

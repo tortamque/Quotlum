@@ -7,11 +7,13 @@ class QuoteCard extends StatelessWidget {
   final String text;
   final String author;
   final FontWeight quoteFontWeight;
+  final FontStyle quoteFontStyle;
 
   const QuoteCard({
     required this.text,
     required this.author,
     required this.quoteFontWeight,
+    required this.quoteFontStyle,
     super.key
   });
 
@@ -23,8 +25,8 @@ class QuoteCard extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 2.5,
       child: Column(
         children: [
-          QuoteIcon(),
-          QuoteText(text: text, fontWeight: quoteFontWeight,),
+          const QuoteIcon(),
+          QuoteText(text: text, fontWeight: quoteFontWeight, fontStyle: quoteFontStyle),
           QuoteAuthor(author: author)
         ],
       ),

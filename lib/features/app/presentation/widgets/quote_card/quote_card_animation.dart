@@ -33,10 +33,12 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
 
   QuoteCard _buildQuoteCard(Key key){
     List fontWeights = [FontWeight.w300 ,FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
+    List fontStyles = [FontStyle.normal, FontStyle.italic];
 
     FontWeight randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
+    FontStyle randomFontStyle = fontStyles[Random().nextInt(fontStyles.length)];
 
-    return QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, quoteFontWeight: randomFontWeight, key: key);
+    return QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, quoteFontWeight: randomFontWeight, quoteFontStyle: randomFontStyle, key: key);
   }
 
   @override
