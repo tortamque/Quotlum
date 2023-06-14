@@ -46,16 +46,16 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   }
 
   TextStyle _generateRandomTextStyle() {
-    final minFontSize = 22;
-    final maxFontSize = 30;
-    final fontWeights = [FontWeight.w300, FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
-    final fontStyles = [FontStyle.normal, FontStyle.italic];
-    final fontFamilies = ["Montserrat", "Nunito", "Poppins", "Raleway", "RobotoMono"];
+    const int minFontSize = 22;
+    const int maxFontSize = 30;
+    final List fontWeights = [FontWeight.w300, FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
+    final List fontStyles = [FontStyle.normal, FontStyle.italic];
+    final List fontFamilies = ["Montserrat", "Nunito", "Poppins", "Raleway", "RobotoMono"];
 
-    final randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
-    final randomFontStyle = fontStyles[Random().nextInt(fontStyles.length)];
-    final randomFontSize = minFontSize + Random().nextInt(maxFontSize - minFontSize + 1);
-    final randomFontFamily = fontFamilies[Random().nextInt(fontFamilies.length)];
+    final FontWeight randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
+    final FontStyle randomFontStyle = fontStyles[Random().nextInt(fontStyles.length)];
+    final int randomFontSize = minFontSize + Random().nextInt(maxFontSize - minFontSize + 1);
+    final String randomFontFamily = fontFamilies[Random().nextInt(fontFamilies.length)];
 
     return TextStyle(
       fontWeight: randomFontWeight,
