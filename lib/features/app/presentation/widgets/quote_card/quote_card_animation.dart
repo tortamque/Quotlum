@@ -17,34 +17,35 @@ class QuoteCardAnimation extends StatefulWidget {
 
 class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   bool showNextQuote = false;
-  bool quoteFetched = false;
-  Quote? fetchedQuote;
+  Quote fetchedQuote = Quote(text: 'Loading', author: 'Loading');
 
-  void _handleSwipeLeft() {
+  void _handleAction() {
     setState(() {
-      showNextQuote = true;
+      _fetchQuote();
+      showNextQuote = !showNextQuote;
     });
   }
 
   Future<void> _fetchQuote() async {
-    if (!quoteFetched) {
-      fetchedQuote = await QuotesClient.createQuote();
-      quoteFetched = true;
-    }
+    fetchedQuote = await QuotesClient.createQuote();
   }
 
   @override
   void initState() {
     super.initState();
-    _fetchQuote();
+    _fetchQuote().then((_) {
+      setState(() {
+        fetchedQuote = fetchedQuote;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onHorizontalDragStart: (details) => _handleSwipeLeft(),
-      onVerticalDragStart: (details) => _handleSwipeLeft(),
-      onTap: () => _handleSwipeLeft(),
+      onHorizontalDragEnd: (details) => _handleAction(),
+      onVerticalDragEnd: (details) => _handleAction(),
+      onTap: () => _handleAction(),
       child: AnimatedSwitcher(
         switchInCurve: Curves.easeInQuad,
         switchOutCurve: Curves.easeInQuad,
@@ -56,11 +57,8 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
           );
         },
         child: showNextQuote
-            ? QuoteCardAnimation(
-                quote: fetchedQuote!,
-                key: ValueKey('next'),
-              )
-            : QuoteCard(text: widget.quote.text, author: widget.quote.author),
+            ? QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: ValueKey('next'),)
+            : QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: ValueKey('prev'),)
       ),
     );
   }
