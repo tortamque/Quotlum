@@ -32,8 +32,8 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   }
 
   QuoteCard _buildQuoteCard(Key key){
-    int minFontSize = 18;
-    int maxFontSize = 28;
+    int minFontSize = 22;
+    int maxFontSize = 30;
     List fontWeights = [FontWeight.w300 ,FontWeight.w400, FontWeight.w500, FontWeight.w600, FontWeight.w700];
     List fontStyles = [FontStyle.normal, FontStyle.italic];
 
