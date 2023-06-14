@@ -19,6 +19,7 @@ class QuoteText extends StatelessWidget {
     return Expanded(
       flex: 5,
       child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 20),
         color: Colors.transparent,
         child: Align(
           alignment: Alignment.center,
