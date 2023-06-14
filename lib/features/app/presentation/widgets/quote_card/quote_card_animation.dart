@@ -17,7 +17,7 @@ class QuoteCardAnimation extends StatefulWidget {
 
 class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   bool showNextQuote = false;
-  Quote fetchedQuote = Quote(text: 'Loading', author: 'Loading');
+  Quote fetchedQuote = Quote(text: 'Loading...\nPretend you don\'t see this text', author: ':D');
 
   void _handleAction() {
     setState(() {
