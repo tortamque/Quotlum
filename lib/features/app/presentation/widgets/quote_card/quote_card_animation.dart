@@ -18,15 +18,11 @@ class QuoteCardAnimation extends StatefulWidget {
 
 class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   bool swapQuotes = false;
-  Quote fetchedQuote = Quote(text: 'Loading...\nPretend you don\'t see this text', author: ':D');
+  Quote fetchedQuote = Quote(text: 'Tap or swipe here to create an awesome quote :D', author: 'Developer');
 
   void _handleAction() {
     setState(() {
-      _fetchQuote().then((_) {
-        setState(() {
-          fetchedQuote = fetchedQuote;
-        });
-      });
+      _fetchQuote();
       swapQuotes = !swapQuotes;
     });
   }
@@ -46,11 +42,7 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   @override
   void initState() {
     super.initState();
-    _fetchQuote().then((_) {
-      setState(() {
-        fetchedQuote = fetchedQuote;
-      });
-    });
+    _fetchQuote();
   }
 
   @override
