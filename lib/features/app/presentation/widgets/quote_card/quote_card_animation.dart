@@ -21,7 +21,11 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
 
   void _handleAction() {
     setState(() {
-      _fetchQuote();
+      _fetchQuote().then((_) {
+        setState(() {
+          fetchedQuote = fetchedQuote;
+        });
+      });
       showNextQuote = !showNextQuote;
     });
   }
