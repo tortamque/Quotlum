@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 import 'package:quotlum/features/app/data/data_sources/remote/quotes_client.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card.dart';
@@ -34,6 +35,15 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
     fetchedQuote = await QuotesClient.createQuote();
   }
 
+  QuoteCard _buildQuoteCard(Key key){
+    List fontWeights = [FontWeight.w400, FontWeight.w500, FontWeight.w600];
+
+    FontWeight randomFontWeight = fontWeights[Random().nextInt(fontWeights.length)];
+    print(randomFontWeight);
+
+    return QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, quoteFontWeight: randomFontWeight, key: key);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -61,8 +71,8 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
           );
         },
         child: swapQuotes
-            ? QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: const ValueKey('next'))
-            : QuoteCard(text: fetchedQuote.text, author: fetchedQuote.author, key: const ValueKey('previous'))
+            ? _buildQuoteCard(const ValueKey('next'))
+            : _buildQuoteCard(const ValueKey('previous'))
       ),
     );
   }

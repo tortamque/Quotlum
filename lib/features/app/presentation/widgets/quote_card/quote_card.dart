@@ -6,10 +6,12 @@ import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_text.
 class QuoteCard extends StatelessWidget {
   final String text;
   final String author;
+  final FontWeight quoteFontWeight;
 
   const QuoteCard({
     required this.text,
     required this.author,
+    required this.quoteFontWeight,
     super.key
   });
 
@@ -22,7 +24,7 @@ class QuoteCard extends StatelessWidget {
       child: Column(
         children: [
           QuoteIcon(),
-          QuoteText(text: text),
+          QuoteText(text: text, fontWeight: quoteFontWeight,),
           QuoteAuthor(author: author)
         ],
       ),

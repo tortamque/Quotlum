@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class QuoteText extends StatelessWidget {
   final String text;
+  final FontWeight fontWeight;
 
   const QuoteText({
     required this.text,
+    required this.fontWeight,
     super.key
   });
 
@@ -16,7 +18,12 @@ class QuoteText extends StatelessWidget {
         color: Colors.transparent,
         child: Align(
           alignment: Alignment.center,
-          child: Text(text),
+          child: Text(
+            text,
+            style: TextStyle(
+              fontWeight: fontWeight
+            ),
+          ),
         ),
       ),
     );
