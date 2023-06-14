@@ -209,6 +209,39 @@ flutter:
           weight: 600
           style: italic
 
+    - family: RobotoMono
+      fonts:
+        - asset: assets/fonts/RobotoMono/RobotoMono-Regular.ttf
+          weight: 400
+          style: normal
+        - asset: assets/fonts/RobotoMono/RobotoMono-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/RobotoMono/RobotoMono-Bold.ttf
+          weight: 700
+          style: normal
+        - asset: assets/fonts/RobotoMono/RobotoMono-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/RobotoMono/RobotoMono-Light.ttf
+          weight: 300
+          style: normal
+        - asset: assets/fonts/RobotoMono/RobotoMono-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/RobotoMono/RobotoMono-Medium.ttf
+          weight: 500
+          style: normal
+        - asset: assets/fonts/RobotoMono/RobotoMono-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/RobotoMono/RobotoMono-SemiBold.ttf
+          weight: 600
+          style: normal
+        - asset: assets/fonts/RobotoMono/RobotoMono-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+
 
   #
   # For details regarding fonts from package dependencies,
