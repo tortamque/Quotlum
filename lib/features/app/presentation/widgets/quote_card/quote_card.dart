@@ -27,7 +27,7 @@ class QuoteCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width / 1.25,
-      height: MediaQuery.of(context).size.height / 2,
+      height: MediaQuery.of(context).size.height / 1.75,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         color: CustomColors.secondaryColor,
