@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_author.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_icon.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_text.dart';
@@ -24,16 +25,28 @@ class QuoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 30),
+      padding: const EdgeInsets.all(20),
       width: MediaQuery.of(context).size.width / 1.25,
-      height: MediaQuery.of(context).size.height / 2.5,
+      height: MediaQuery.of(context).size.height / 2,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        color: CustomColors.secondaryColor,
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(0, 0, 0, 0.25),
+            offset: Offset(4, 4),
+            blurRadius: 4,
+            spreadRadius: 0,
+          )
+        ]
+      ),
       child: Column(
         children: [
           const QuoteIcon(),
           QuoteText(text: text, fontWeight: fontWeight, fontStyle: fontStyle, fontSize: fontSize, fontFamily: fontFamily),
           QuoteAuthor(author: author, fontWeight: fontWeight, fontFamily: fontFamily)
         ],
-      ),
+      )
     );
   }
 }
