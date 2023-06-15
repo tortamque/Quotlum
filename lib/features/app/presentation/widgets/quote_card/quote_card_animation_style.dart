@@ -12,11 +12,8 @@ class QuoteCardAnimationStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.centerLeft,
-      child: Padding(
-        padding: EdgeInsets.only(left: 30),
-        child: card,
-      ),
+      alignment: Alignment.center,
+      child: card,
     );
   }
 }
