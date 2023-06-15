@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quotlum/features/app/widgets/quote_card/quote_card_animation.dart';
+import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
 
 class QuoteCardAnimationStyle extends StatelessWidget {
   final QuoteCardAnimation card;
