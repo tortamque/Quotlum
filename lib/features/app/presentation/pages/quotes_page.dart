@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
@@ -17,8 +18,8 @@ class _QuotesPageState extends State<QuotesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        backgroundColor: CustomColors.mainColor,
+        title: Text(widget.title, style: const TextStyle(color: CustomColors.secondaryColor),),
       ),
       body: Stack(
         children: [

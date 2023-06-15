@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quotlum/config/theme/colors.dart';
 
 class Background extends StatelessWidget {
   const Background({super.key});
@@ -6,16 +7,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Colors.white,
-            Theme.of(context).colorScheme.primaryContainer
-          ]
-        )
-      ),
+      color: CustomColors.mainColor
     );
   }
 }
