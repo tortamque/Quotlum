@@ -78,9 +78,9 @@ class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
       onVerticalDragEnd: (details) => _handleAction(),
       onTap: () => _handleAction(),
       child: AnimatedSwitcher(
-        switchInCurve: Curves.easeInQuad,
-        switchOutCurve: Curves.easeInQuad,
-        duration: const Duration(milliseconds: 500),
+        switchInCurve: Curves.easeOutQuint,
+        switchOutCurve: Curves.easeInQuint,
+        duration: const Duration(milliseconds: 750),
         transitionBuilder: (Widget child, Animation<double> animation) {
           return ScaleTransition(
             scale: animation,
