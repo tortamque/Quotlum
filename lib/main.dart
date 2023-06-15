@@ -14,7 +14,6 @@ class QuotlumApp extends StatelessWidget {
     return MaterialApp(
       title: 'Quotlum',
       theme: ThemeData(
-        colorSchemeSeed: Colors.greenAccent,
         brightness: Brightness.light,
         useMaterial3: true,
       ),
