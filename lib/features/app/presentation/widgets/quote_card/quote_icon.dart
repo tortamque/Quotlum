@@ -11,8 +11,8 @@ class QuoteIcon extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Image.asset(
           "assets/icons/quote.png",
-          width: 15,
-          height: 15,
+          width: 20,
+          height: 20,
         ),
       ),
     );
