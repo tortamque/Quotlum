@@ -34,8 +34,8 @@ class QuoteCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.25),
-            offset: Offset(4, 4),
-            blurRadius: 4,
+            offset: Offset(6, 6),
+            blurRadius: 2,
             spreadRadius: 0,
           )
         ]
