@@ -21,11 +21,8 @@ class _QuotesPageState extends State<QuotesPage> {
       appBar: AppBar(
         backgroundColor: CustomColors.mainColor,
         title: Text(widget.title, style: const TextStyle(color: CustomColors.secondaryColor),),
-        actions: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: SettingsAnimatedIcon(),
-          )
+        actions: const [
+          SettingsAnimatedIcon(),
         ],
       ),
       body: Stack(

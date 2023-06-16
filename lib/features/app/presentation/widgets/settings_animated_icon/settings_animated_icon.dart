@@ -9,15 +9,20 @@ class SettingsAnimatedIcon extends StatefulWidget {
 }
 
 class _SettingsAnimatedIconState extends State<SettingsAnimatedIcon> with TickerProviderStateMixin {
-  bool _isPlay = false;
   late AnimationController _controller;
+  late Animation<double> _animation;
 
   @override
   void initState() {
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 750),
-      vsync: this
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
     );
+    _animation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeOut, 
+    );
+
     super.initState();
   }
 
@@ -26,24 +31,36 @@ class _SettingsAnimatedIconState extends State<SettingsAnimatedIcon> with Ticker
     _controller.dispose();
     super.dispose();
   }
+
   
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){
-        if (_isPlay == false) {
-          _controller.forward();
-          _isPlay = true;
-        } else{
-          _controller.reverse();
-          _isPlay = false;
-        }
-      },
-      child: AnimatedIcon(
-        icon: AnimatedIcons.menu_arrow,
-        progress: _controller,
-        color: CustomColors.secondaryColor,
-        size: 30,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: RotationTransition(
+        turns: _animation,
+        child: SizedBox(
+          child: IconButton(
+            onPressed: () {
+              _controller.reset();
+              _controller.forward();
+
+              showModalBottomSheet(
+                context: context, 
+                builder: (BuildContext context){
+                  return SizedBox(
+                    height: 400,
+                    child: Center(
+                      child: Text("Some text")
+                    ),
+                  );
+                }
+              );
+            },
+            icon: const Icon(Icons.color_lens_outlined, color: CustomColors.secondaryColor,),
+            iconSize: 27.5,
+          ),
+        ),
       ),
     );
   }
