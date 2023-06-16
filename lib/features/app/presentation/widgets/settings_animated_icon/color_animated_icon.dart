@@ -32,12 +32,22 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
     super.dispose();
   }
 
+  Widget _buildBottomSheetContent(){
+    return SizedBox(
+      height: MediaQuery.of(context).size.height/2,
+      child: SingleChildScrollView(
+        child: Placeholder()                
+      )
+    );
+  }
+
   
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: RotationTransition(
+        
         turns: _animation,
         child: SizedBox(
           child: IconButton(
@@ -48,12 +58,7 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
               showModalBottomSheet(
                 context: context, 
                 builder: (BuildContext context){
-                  return SizedBox(
-                    height: 400,
-                    child: Center(
-                      child: Text("Some text")
-                    ),
-                  );
+                  return _buildBottomSheetContent();
                 }
               );
             },
