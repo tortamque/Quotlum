@@ -20,7 +20,7 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
     );
     _animation = CurvedAnimation(
       parent: _controller,
-      curve: Curves.easeOut, 
+      curve: Curves.easeOutCubic, 
     );
 
     super.initState();
@@ -41,7 +41,6 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
     );
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Padding(
