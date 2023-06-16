@@ -4,6 +4,7 @@ import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation_style.dart';
+import 'package:quotlum/features/app/presentation/widgets/settings_animated_icon/settings_animated_icon.dart';
 
 class QuotesPage extends StatefulWidget {
   const QuotesPage({super.key, required this.title});
@@ -20,6 +21,12 @@ class _QuotesPageState extends State<QuotesPage> {
       appBar: AppBar(
         backgroundColor: CustomColors.mainColor,
         title: Text(widget.title, style: const TextStyle(color: CustomColors.secondaryColor),),
+        actions: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: SettingsAnimatedIcon(),
+          )
+        ],
       ),
       body: Stack(
         children: [
