@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quotlum/core/utils/dependency_injection.dart';
 import 'package:quotlum/features/app/presentation/pages/quotes_page.dart';
 
 void main() {
   runApp(const QuotlumApp());
+  DependencyInjection.init();
 }
 
 class QuotlumApp extends StatelessWidget {
   const QuotlumApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Quotlum',
       theme: ThemeData(
         brightness: Brightness.light,
