@@ -35,8 +35,30 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
   Widget _buildBottomSheetContent(){
     return SizedBox(
       height: MediaQuery.of(context).size.height/2,
-      child: SingleChildScrollView(
-        child: Placeholder()                
+      child: GridView.count(
+        crossAxisCount: 3,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(30),
+            child: GestureDetector(
+              onTap: (){},
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.greenAccent,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromRGBO(0, 0, 0, 0.2),
+                      offset: Offset(4, 4),
+                      blurRadius: 5,
+                      spreadRadius: 0,
+                    )
+                  ]
+                ),
+              ),
+            )
+          ),
+        ],
       )
     );
   }
