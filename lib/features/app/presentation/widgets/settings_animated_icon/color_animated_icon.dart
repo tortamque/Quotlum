@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:quotlum/config/theme/colors.dart';
 
-class SettingsAnimatedIcon extends StatefulWidget {
-  const SettingsAnimatedIcon({super.key});
+class ColorAnimatedIcon extends StatefulWidget {
+  const ColorAnimatedIcon({super.key});
 
   @override
-  State<SettingsAnimatedIcon> createState() => _SettingsAnimatedIconState();
+  State<ColorAnimatedIcon> createState() => _ColorAnimatedIconState();
 }
 
-class _SettingsAnimatedIconState extends State<SettingsAnimatedIcon> with TickerProviderStateMixin {
+class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
