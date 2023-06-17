@@ -27,7 +27,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               elevation: 0, 
               title: Text(
                 title,
-                style: const TextStyle(color: CustomColors.secondaryColor),
+                style: TextStyle(color: CustomColors.secondaryColor),
               ),
               actions: const [
                 ColorAnimatedIcon(),

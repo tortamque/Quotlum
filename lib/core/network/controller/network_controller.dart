@@ -15,7 +15,7 @@ class NetworkController extends GetxController{
   void _updateConnectionStatus(ConnectivityResult result) {
     if (result == ConnectivityResult.none) {
       Get.rawSnackbar(
-        messageText: const Text(
+        messageText: Text(
           'Internet connection is lost :(\nCan\'t get new awesome quotes for you',
           style: TextStyle(
             color: CustomColors.secondaryColor,
@@ -25,7 +25,7 @@ class NetworkController extends GetxController{
         isDismissible: false,
         duration: const Duration(days: 1),
         backgroundColor: Colors.red[400]!,
-        icon : const Icon(Icons.wifi_off, color: CustomColors.secondaryColor, size: 35,),
+        icon : Icon(Icons.wifi_off, color: CustomColors.secondaryColor, size: 35,),
         margin: EdgeInsets.zero,
         snackStyle: SnackStyle.GROUNDED
       );
