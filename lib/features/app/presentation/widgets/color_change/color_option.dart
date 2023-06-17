@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quotlum/config/theme/colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
 
 class ColorOption extends StatelessWidget {
   final Color color;
@@ -15,7 +16,9 @@ class ColorOption extends StatelessWidget {
       padding: const EdgeInsets.all(30),
       child: GestureDetector(
         onTap: (){
-          CustomColors.mainColor = color;
+          BlocProvider.of<ChangeThemeColorBloc>(context).add(
+            ChangeThemeColorEvent(color)
+          );
         },
         child: Container(
           decoration: BoxDecoration(
