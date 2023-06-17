@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const CustomAppBar({
     required this.title,
-    super.key
+    super.key,
   });
 
   @override
@@ -18,12 +18,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       preferredSize: const Size.fromHeight(kToolbarHeight),
       child: BlocBuilder<ChangeThemeColorBloc, Color>(
         builder: (context, state) {
-          return AppBar(
-            backgroundColor: CustomColors.mainColor,
-            title: Text(title, style: const TextStyle(color: CustomColors.secondaryColor),),
-            actions: const [
-              ColorAnimatedIcon(),
-            ],
+          return AnimatedContainer(
+            duration: const Duration(milliseconds: 500),
+            color: state,
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0, 
+              title: Text(
+                title,
+                style: const TextStyle(color: CustomColors.secondaryColor),
+              ),
+              actions: const [
+                ColorAnimatedIcon(),
+              ],
+            ),
           );
         },
       ),
