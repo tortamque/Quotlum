@@ -8,13 +8,22 @@ class ChangeThemeColorBloc extends Bloc<ChangeThemeColorEvent, Color>{
   }
 
   _onChangeThemeColor(ChangeThemeColorEvent event, Emitter<Color> emit){
-    CustomColors.mainColor = event.newColor;
-    emit(event.newColor);
+    CustomColors.mainColor = event.mainColor;
+    CustomColors.secondaryColor = event.secondaryColor;
+    CustomColors.tertiaryColor = event.tertiaryColor;
+
+    emit(event.mainColor);
   }
 }
 
 class ChangeThemeColorEvent {
-  final Color newColor;
+  final Color mainColor;
+  final Color secondaryColor;
+  final Color tertiaryColor;
 
-  ChangeThemeColorEvent(this.newColor);
+  ChangeThemeColorEvent({
+    required this.mainColor,
+    required this.secondaryColor,
+    required this.tertiaryColor
+  });
 }
