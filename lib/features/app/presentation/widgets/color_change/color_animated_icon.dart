@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotlum/config/theme/colors.dart';
-import 'package:quotlum/features/app/presentation/widgets/color_change/color_option.dart';
+import 'package:quotlum/features/app/domain/entities/classes/color_options.dart';
 
 class ColorAnimatedIcon extends StatefulWidget {
   const ColorAnimatedIcon({super.key});
@@ -38,9 +38,7 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
       height: MediaQuery.of(context).size.height/2,
       child: GridView.count(
         crossAxisCount: 3,
-        children: [
-          ColorOption(color: Colors.greenAccent)
-        ],
+        children: ColorOptions.colors
       )
     );
   }
