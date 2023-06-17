@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
+import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
 import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation_style.dart';
@@ -18,12 +20,19 @@ class _QuotesPageState extends State<QuotesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: CustomColors.mainColor,
-        title: Text(widget.title, style: const TextStyle(color: CustomColors.secondaryColor),),
-        actions: const [
-          ColorAnimatedIcon(),
-        ],
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: BlocBuilder<ChangeThemeColorBloc, Color>(
+          builder: (context, state) {
+            return AppBar(
+              backgroundColor: CustomColors.mainColor,
+              title: Text(widget.title, style: const TextStyle(color: CustomColors.secondaryColor),),
+              actions: const [
+                ColorAnimatedIcon(),
+              ],
+            );
+          },
+        ),
       ),
       body: Stack(
         children: [
