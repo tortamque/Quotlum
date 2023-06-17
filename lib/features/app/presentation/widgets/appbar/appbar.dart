@@ -25,9 +25,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0, 
-              title: Text(
-                title,
-                style: TextStyle(color: CustomColors.secondaryColor),
+              title: AnimatedDefaultTextStyle(
+                style: TextStyle(
+                  color: CustomColors.secondaryColor,
+                  fontSize: 24
+                ),
+                curve: Curves.easeOutCubic,
+                duration: const Duration(milliseconds: 500),
+                child: Text(
+                  title,
+                ),
               ),
               actions: const [
                 ColorAnimatedIcon(),
