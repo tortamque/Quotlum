@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quotlum/config/theme/colors.dart';
 
 class ColorOption extends StatelessWidget {
   final Color color;
@@ -13,7 +14,9 @@ class ColorOption extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(30),
       child: GestureDetector(
-        onTap: (){},
+        onTap: (){
+          CustomColors.mainColor = color;
+        },
         child: Container(
           decoration: BoxDecoration(
             color: color,
