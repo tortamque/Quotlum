@@ -27,7 +27,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               elevation: 0, 
               title: AnimatedDefaultTextStyle(
                 style: TextStyle(
-                  color: CustomColors.secondaryColor,
+                  color: CustomColors.appbarContentColor,
                   fontSize: 24
                 ),
                 curve: Curves.easeOutCubic,

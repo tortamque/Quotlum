@@ -3,28 +3,28 @@ import 'package:quotlum/features/app/presentation/widgets/color_change/color_opt
 
 class ColorOptions{
   static const List<ColorOption> colors = [
-    ColorOption(mainColor:Colors.redAccent, secondaryColor: Colors.white, tertiaryColor: Colors.black),
-    ColorOption(mainColor:Colors.blueAccent, secondaryColor: Colors.white, tertiaryColor: Colors.black),
-    ColorOption(mainColor:Colors.cyanAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.redAccent, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.blueAccent, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.cyanAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
 
-    ColorOption(mainColor:Colors.limeAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
-    ColorOption(mainColor:Colors.pinkAccent, secondaryColor: Colors.white, tertiaryColor: Colors.black),
-    ColorOption(mainColor:Colors.tealAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.limeAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.pinkAccent, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.tealAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
 
-    ColorOption(mainColor:Colors.greenAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
-    ColorOption(mainColor:Colors.amberAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
-    ColorOption(mainColor:Colors.indigoAccent, secondaryColor: Colors.white, tertiaryColor: Colors.black),
+    ColorOption(appBackgroundColor:Colors.greenAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.amberAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.indigoAccent, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
 
-    ColorOption(mainColor:Colors.orangeAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
-    ColorOption(mainColor:Colors.purpleAccent, secondaryColor: Colors.white, tertiaryColor: Colors.black),
-    ColorOption(mainColor:Colors.yellowAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.orangeAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.purpleAccent, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.yellowAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
 
-    ColorOption(mainColor:Colors.lightBlueAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
-    ColorOption(mainColor:Colors.deepOrangeAccent, secondaryColor: Colors.white, tertiaryColor: Colors.black),
-    ColorOption(mainColor:Colors.deepPurpleAccent, secondaryColor: Colors.white, tertiaryColor: Colors.black),
+    ColorOption(appBackgroundColor:Colors.lightBlueAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.deepOrangeAccent, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.deepPurpleAccent, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
 
-    ColorOption(mainColor:Colors.lightGreenAccent, secondaryColor: Colors.black, tertiaryColor: Colors.white),
-    ColorOption(mainColor:Colors.grey, secondaryColor: Colors.white, tertiaryColor: Colors.black),
-    ColorOption(mainColor:Colors.white, secondaryColor: Colors.black, tertiaryColor: Colors.white)
+    ColorOption(appBackgroundColor:Colors.lightGreenAccent, appbarContentColor: Colors.black, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.grey, appbarContentColor: Colors.white, cardBackgroundColor: Colors.white),
+    ColorOption(appBackgroundColor:Colors.white, appbarContentColor: Colors.black, cardBackgroundColor: Colors.grey)
   ];
 }

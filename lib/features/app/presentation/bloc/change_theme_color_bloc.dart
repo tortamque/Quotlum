@@ -3,27 +3,27 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/config/theme/colors.dart';
 
 class ChangeThemeColorBloc extends Bloc<ChangeThemeColorEvent, Color>{
-  ChangeThemeColorBloc() : super(CustomColors.mainColor){
+  ChangeThemeColorBloc() : super(CustomColors.appBackgroundColor){
     on<ChangeThemeColorEvent>(_onChangeThemeColor);
   }
 
   _onChangeThemeColor(ChangeThemeColorEvent event, Emitter<Color> emit){
-    CustomColors.mainColor = event.mainColor;
-    CustomColors.secondaryColor = event.secondaryColor;
-    CustomColors.tertiaryColor = event.tertiaryColor;
+    CustomColors.appBackgroundColor = event.appBackgroundColor;
+    CustomColors.appbarContentColor = event.appbarContentColor;
+    CustomColors.cardBackgroundColor = event.cardBackgroundColor;
 
-    emit(event.mainColor);
+    emit(event.appBackgroundColor);
   }
 }
 
 class ChangeThemeColorEvent {
-  final Color mainColor;
-  final Color secondaryColor;
-  final Color tertiaryColor;
+  final Color appBackgroundColor;
+  final Color appbarContentColor;
+  final Color cardBackgroundColor;
 
   ChangeThemeColorEvent({
-    required this.mainColor,
-    required this.secondaryColor,
-    required this.tertiaryColor
+    required this.appBackgroundColor,
+    required this.appbarContentColor,
+    required this.cardBackgroundColor
   });
 }

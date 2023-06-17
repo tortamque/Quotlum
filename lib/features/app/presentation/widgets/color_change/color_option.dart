@@ -3,15 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
 
 class ColorOption extends StatefulWidget {
-  final Color mainColor;
-  final Color secondaryColor;
-  final Color tertiaryColor;
+  final Color appBackgroundColor;
+  final Color appbarContentColor;
+  final Color cardBackgroundColor;
 
 
   const ColorOption({
-    required this.mainColor,
-    required this.secondaryColor,
-    required this.tertiaryColor,
+    required this.appBackgroundColor,
+    required this.appbarContentColor,
+    required this.cardBackgroundColor,
     super.key
   });
 
@@ -55,15 +55,15 @@ class _ColorOptionState extends State<ColorOption> with TickerProviderStateMixin
             _controller.forward();
             BlocProvider.of<ChangeThemeColorBloc>(context).add(
               ChangeThemeColorEvent(
-                mainColor: widget.mainColor,
-                secondaryColor: widget.secondaryColor,
-                tertiaryColor: widget.tertiaryColor
+                appBackgroundColor: widget.appBackgroundColor,
+                appbarContentColor: widget.appbarContentColor,
+                cardBackgroundColor: widget.cardBackgroundColor
               )
             );
           },
           child: Container(
             decoration: BoxDecoration(
-              color: widget.mainColor,
+              color: widget.appBackgroundColor,
               borderRadius: const BorderRadius.all(Radius.circular(20)),
               boxShadow: const [
                 BoxShadow(

@@ -30,7 +30,7 @@ class QuoteCard extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 1.75,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(20)),
-        color: CustomColors.secondaryColor,
+        color: CustomColors.cardBackgroundColor,
         boxShadow: const [
           BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.25),

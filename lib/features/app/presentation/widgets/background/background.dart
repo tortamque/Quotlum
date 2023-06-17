@@ -14,7 +14,7 @@ class Background extends StatelessWidget {
         return AnimatedContainer(
           curve: Curves.easeOutCubic,
           duration: const Duration(milliseconds: 500),
-          color: CustomColors.mainColor,
+          color: CustomColors.appBackgroundColor,
         );
       },
     );

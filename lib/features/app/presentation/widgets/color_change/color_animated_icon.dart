@@ -66,7 +66,7 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
             },
             icon: BlocBuilder<ChangeThemeColorBloc, Color>(
               builder: (context, state) {
-                return Icon(Icons.color_lens_outlined, color: CustomColors.secondaryColor);
+                return Icon(Icons.color_lens_outlined, color: CustomColors.appbarContentColor);
               },
             ),
             iconSize: 27.5,
