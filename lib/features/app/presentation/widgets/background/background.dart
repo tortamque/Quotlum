@@ -11,6 +11,7 @@ class Background extends StatelessWidget {
     return BlocBuilder<ChangeThemeColorBloc, Color>(
       builder: (context, state) {
         return AnimatedContainer(
+          curve: Curves.easeOutCubic,
           duration: const Duration(milliseconds: 500),
           color: state,
         );

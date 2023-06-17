@@ -19,6 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: BlocBuilder<ChangeThemeColorBloc, Color>(
         builder: (context, state) {
           return AnimatedContainer(
+            curve: Curves.easeOutCubic,
             duration: const Duration(milliseconds: 500),
             color: state,
             child: AppBar(
