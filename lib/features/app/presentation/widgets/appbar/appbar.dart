@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
-import 'package:quotlum/features/app/presentation/widgets/color_change/color_animated_icon.dart';
+import 'package:quotlum/features/app/presentation/widgets/appbar/appbar_title.dart';
+import 'package:quotlum/features/app/presentation/widgets/appbar/color_animated_icon.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -25,17 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0, 
-              title: AnimatedDefaultTextStyle(
-                style: TextStyle(
-                  color: CustomColors.appbarContentColor,
-                  fontSize: 24
-                ),
-                curve: Curves.easeOutCubic,
-                duration: const Duration(milliseconds: 500),
-                child: Text(
-                  title,
-                ),
-              ),
+              title: AppBarTitle(title: title),
               actions: const [
                 ColorAnimatedIcon(),
               ],
