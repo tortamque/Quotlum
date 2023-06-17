@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
-import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
+import 'package:quotlum/features/app/presentation/widgets/appbar/appbar.dart';
 import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation_style.dart';
-import 'package:quotlum/features/app/presentation/widgets/color_change/color_animated_icon.dart';
 
 class QuotesPage extends StatefulWidget {
   const QuotesPage({super.key, required this.title});
@@ -20,20 +17,7 @@ class _QuotesPageState extends State<QuotesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: BlocBuilder<ChangeThemeColorBloc, Color>(
-          builder: (context, state) {
-            return AppBar(
-              backgroundColor: CustomColors.mainColor,
-              title: Text(widget.title, style: const TextStyle(color: CustomColors.secondaryColor),),
-              actions: const [
-                ColorAnimatedIcon(),
-              ],
-            );
-          },
-        ),
-      ),
+      appBar: CustomAppBar(title: widget.title),
       body: Stack(
         children: [
           const Background(),
