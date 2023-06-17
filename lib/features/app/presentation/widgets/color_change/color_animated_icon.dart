@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/domain/entities/classes/color_options.dart';
+import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
 
 class ColorAnimatedIcon extends StatefulWidget {
   const ColorAnimatedIcon({super.key});
@@ -48,7 +50,6 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: RotationTransition(
-        
         turns: _animation,
         child: SizedBox(
           child: IconButton(
@@ -63,7 +64,11 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
                 }
               );
             },
-            icon: const Icon(Icons.color_lens_outlined, color: CustomColors.secondaryColor,),
+            icon: BlocBuilder<ChangeThemeColorBloc, Color>(
+              builder: (context, state) {
+                return Icon(Icons.color_lens_outlined, color: CustomColors.secondaryColor);
+              },
+            ),
             iconSize: 27.5,
           ),
         ),
