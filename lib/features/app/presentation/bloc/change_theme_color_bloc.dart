@@ -8,6 +8,7 @@ class ChangeThemeColorBloc extends Bloc<ChangeThemeColorEvent, Color>{
   }
 
   _onChangeThemeColor(ChangeThemeColorEvent event, Emitter<Color> emit){
+    CustomColors.mainColor = event.newColor;
     emit(event.newColor);
   }
 }
