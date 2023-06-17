@@ -5,13 +5,11 @@ import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.d
 class ColorOption extends StatefulWidget {
   final Color appBackgroundColor;
   final Color appbarContentColor;
-  final Color cardBackgroundColor;
 
 
   const ColorOption({
     required this.appBackgroundColor,
     required this.appbarContentColor,
-    required this.cardBackgroundColor,
     super.key
   });
 
@@ -57,7 +55,6 @@ class _ColorOptionState extends State<ColorOption> with TickerProviderStateMixin
               ChangeThemeColorEvent(
                 appBackgroundColor: widget.appBackgroundColor,
                 appbarContentColor: widget.appbarContentColor,
-                cardBackgroundColor: widget.cardBackgroundColor
               )
             );
           },

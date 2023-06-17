@@ -10,7 +10,6 @@ class ChangeThemeColorBloc extends Bloc<ChangeThemeColorEvent, Color>{
   _onChangeThemeColor(ChangeThemeColorEvent event, Emitter<Color> emit){
     CustomColors.appBackgroundColor = event.appBackgroundColor;
     CustomColors.appbarContentColor = event.appbarContentColor;
-    CustomColors.cardBackgroundColor = event.cardBackgroundColor;
 
     emit(event.appBackgroundColor);
   }
@@ -19,11 +18,9 @@ class ChangeThemeColorBloc extends Bloc<ChangeThemeColorEvent, Color>{
 class ChangeThemeColorEvent {
   final Color appBackgroundColor;
   final Color appbarContentColor;
-  final Color cardBackgroundColor;
 
   ChangeThemeColorEvent({
     required this.appBackgroundColor,
     required this.appbarContentColor,
-    required this.cardBackgroundColor
   });
 }
