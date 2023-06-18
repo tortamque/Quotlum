@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_author.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_icon.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_text.dart';
@@ -30,7 +29,7 @@ class QuoteCard extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 1.75,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
-        color: CustomColors.secondaryColor,
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.25),

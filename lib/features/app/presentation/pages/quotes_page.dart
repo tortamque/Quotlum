@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
+import 'package:quotlum/features/app/presentation/widgets/appbar/appbar.dart';
 import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation_style.dart';
@@ -17,10 +17,7 @@ class _QuotesPageState extends State<QuotesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: CustomColors.mainColor,
-        title: Text(widget.title, style: const TextStyle(color: CustomColors.secondaryColor),),
-      ),
+      appBar: CustomAppBar(title: widget.title),
       body: Stack(
         children: [
           const Background(),
