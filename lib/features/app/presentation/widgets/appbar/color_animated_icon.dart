@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quotlum/config/theme/colors.dart';
 import 'package:quotlum/features/app/domain/entities/classes/color_options.dart';
 import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
 
@@ -12,17 +11,17 @@ class ColorAnimatedIcon extends StatefulWidget {
 }
 
 class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
+  late AnimationController _rotationController;
+  late Animation<double> _rotationAnimation;
 
   @override
   void initState() {
-    _controller = AnimationController(
+    _rotationController = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
-    _animation = CurvedAnimation(
-      parent: _controller,
+    _rotationAnimation = CurvedAnimation(
+      parent: _rotationController,
       curve: Curves.easeOutCubic, 
     );
 
@@ -31,7 +30,7 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
 
   @override
   void dispose() {
-    _controller.dispose();
+    _rotationController.dispose();
     super.dispose();
   }
 
@@ -50,12 +49,12 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: RotationTransition(
-        turns: _animation,
+        turns: _rotationAnimation,
         child: SizedBox(
           child: IconButton(
             onPressed: () {
-              _controller.reset();
-              _controller.forward();
+              _rotationController.reset();
+              _rotationController.forward();
 
               showModalBottomSheet(
                 context: context, 
@@ -64,9 +63,19 @@ class _ColorAnimatedIconState extends State<ColorAnimatedIcon> with TickerProvid
                 }
               );
             },
-            icon: BlocBuilder<ChangeThemeColorBloc, Color>(
+            icon: BlocBuilder<ChangeThemeColorBloc, ColorState>(
               builder: (context, state) {
-                return Icon(Icons.color_lens_outlined, color: CustomColors.appbarContentColor);
+                return TweenAnimationBuilder<Color?>(
+                  tween: ColorTween(
+                    begin: state.previous,
+                    end: state.current,
+                  ),
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeOutCubic,
+                  builder: (context, value, child) {
+                    return Icon(Icons.color_lens_outlined, color: value);
+                  },
+                );
               },
             ),
             iconSize: 27.5,
