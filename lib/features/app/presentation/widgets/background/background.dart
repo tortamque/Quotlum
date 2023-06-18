@@ -9,7 +9,7 @@ class Background extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ChangeThemeColorBloc, Color>(
+    return BlocBuilder<ChangeThemeColorBloc, ColorState>(
       builder: (context, state) {
         return AnimatedContainer(
           curve: Curves.easeOutCubic,

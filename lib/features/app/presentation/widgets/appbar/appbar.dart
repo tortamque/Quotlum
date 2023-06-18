@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return PreferredSize(
       preferredSize: const Size.fromHeight(kToolbarHeight),
-      child: BlocBuilder<ChangeThemeColorBloc, Color>(
+      child: BlocBuilder<ChangeThemeColorBloc, ColorState>(
         builder: (context, state) {
           return AnimatedContainer(
             curve: Curves.easeOutCubic,
