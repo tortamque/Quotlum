@@ -3,6 +3,14 @@ import 'package:quotlum/features/app/presentation/widgets/color_change/color_opt
 
 class ColorOptions{
   static const List<ColorOption> colors = [
+    ColorOption(appBackgroundColor:Color(0xFF817DBA), appbarContentColor: Colors.white),
+    ColorOption(appBackgroundColor:Color(0xFFA0C49D), appbarContentColor: Colors.black),
+    ColorOption(appBackgroundColor:Color(0xFFC4DFDF), appbarContentColor: Colors.black),
+
+    ColorOption(appBackgroundColor:Color(0xFFA7727D), appbarContentColor: Colors.white),
+    ColorOption(appBackgroundColor:Color(0xFFD0B8A8), appbarContentColor: Colors.black),
+    ColorOption(appBackgroundColor:Color(0xFF9F8772), appbarContentColor: Colors.black),
+
     ColorOption(appBackgroundColor:Colors.redAccent, appbarContentColor: Colors.white),
     ColorOption(appBackgroundColor:Colors.blueAccent, appbarContentColor: Colors.white),
     ColorOption(appBackgroundColor:Colors.cyanAccent, appbarContentColor: Colors.black),
