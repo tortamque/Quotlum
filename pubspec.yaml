@@ -39,6 +39,7 @@ dependencies:
   http: ^1.0.0
   connectivity_plus: ^4.0.1
   get: ^4.6.5
+  shared_preferences: ^2.1.2
 
 dev_dependencies:
   flutter_test:
