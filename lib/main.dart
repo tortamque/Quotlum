@@ -30,16 +30,5 @@ class QuotlumApp extends StatelessWidget {
         home: const QuotesPage(title: 'Quotlum'),
       )
     );
-    /*BlocProvider<ChangeThemeColorBloc>(
-      create: (context) => ChangeThemeColorBloc(),
-      child: GetMaterialApp(
-        title: 'Quotlum',
-        theme: ThemeData(
-          brightness: Brightness.light,
-          useMaterial3: true,
-        ),
-        home: const QuotesPage(title: 'Quotlum'),
-      ),
-    );*/
   }
 }
