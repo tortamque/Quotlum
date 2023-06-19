@@ -16,8 +16,6 @@ class GetThemeColorBloc extends Bloc<GetThemeColorEvent, void>{
 
     CustomColors.appBackgroundColor = Color(appBackgroundColor);
     CustomColors.appbarContentColor = Color(appbarContentColor);
-
-    emit(null);
   }
 }
 
