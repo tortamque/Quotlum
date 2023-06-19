@@ -20,7 +20,7 @@ class _QuotesPageState extends State<QuotesPage> {
   void initState() {
     super.initState();
     
-    BlocProvider.of<GetThemeColorBloc>(context).add(GetThemeColorEvent());
+    BlocProvider.of<GetThemeColorBloc>(context).add(GetThemeColorEvent(context: context));
   }
 
   @override

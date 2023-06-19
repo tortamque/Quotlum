@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/config/theme/colors.dart';
+import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class GetThemeColorBloc extends Bloc<GetThemeColorEvent, void>{
@@ -16,7 +17,22 @@ class GetThemeColorBloc extends Bloc<GetThemeColorEvent, void>{
 
     CustomColors.appBackgroundColor = Color(appBackgroundColor);
     CustomColors.appbarContentColor = Color(appbarContentColor);
+
+    Future.delayed(const Duration(seconds: 1)).then((value){
+      BlocProvider.of<ChangeThemeColorBloc>(event.context).add(
+        ChangeThemeColorEvent(
+          appBackgroundColor: CustomColors.appBackgroundColor,
+          appbarContentColor: CustomColors.appbarContentColor,
+        )
+      );
+    });
   }
 }
 
-class GetThemeColorEvent{}
+class GetThemeColorEvent{
+  final BuildContext context;
+
+  GetThemeColorEvent({
+    required this.context
+  });
+}
