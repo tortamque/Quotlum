@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
+import 'package:quotlum/features/app/presentation/bloc/save_theme_color_bloc.dart';
 
 class ColorOption extends StatefulWidget {
   final Color appBackgroundColor;
@@ -57,6 +58,8 @@ class _ColorOptionState extends State<ColorOption> with TickerProviderStateMixin
                 appbarContentColor: widget.appbarContentColor,
               )
             );
+
+            BlocProvider.of<SaveThemeColorBloc>(context).add(SaveThemeColorEvent());
           },
           child: Container(
             decoration: BoxDecoration(
