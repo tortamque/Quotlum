@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:quotlum/core/utils/dependency_injection.dart';
 import 'package:quotlum/features/app/presentation/bloc/change_theme_color_bloc.dart';
+import 'package:quotlum/features/app/presentation/bloc/save_theme_color_bloc.dart';
 import 'package:quotlum/features/app/presentation/pages/quotes_page.dart';
 
 void main() {
@@ -15,7 +16,21 @@ class QuotlumApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<ChangeThemeColorBloc>(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ChangeThemeColorBloc>(create: (context) => ChangeThemeColorBloc()),
+        BlocProvider<SaveThemeColorBloc>(create: (context) => SaveThemeColorBloc())
+      ], 
+      child: GetMaterialApp(
+        title: 'Quotlum',
+        theme: ThemeData(
+          brightness: Brightness.light,
+          useMaterial3: true,
+        ),
+        home: const QuotesPage(title: 'Quotlum'),
+      )
+    );
+    /*BlocProvider<ChangeThemeColorBloc>(
       create: (context) => ChangeThemeColorBloc(),
       child: GetMaterialApp(
         title: 'Quotlum',
@@ -25,6 +40,6 @@ class QuotlumApp extends StatelessWidget {
         ),
         home: const QuotesPage(title: 'Quotlum'),
       ),
-    );
+    );*/
   }
 }
