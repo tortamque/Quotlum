@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
+import 'package:quotlum/features/app/presentation/bloc/get_theme_color_bloc.dart';
 import 'package:quotlum/features/app/presentation/widgets/appbar/appbar.dart';
 import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card_animation.dart';
@@ -14,6 +16,13 @@ class QuotesPage extends StatefulWidget {
 }
 
 class _QuotesPageState extends State<QuotesPage> {
+  @override
+  void initState() {
+    super.initState();
+    
+    BlocProvider.of<GetThemeColorBloc>(context).add(GetThemeColorEvent());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
