@@ -15,4 +15,10 @@ class ThemeColorDataSource {
 
     return colorValue;
   }
+
+  static void saveColor(String fieldName, int colorValue) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    await prefs.setInt(fieldName, colorValue);
+  }
 }

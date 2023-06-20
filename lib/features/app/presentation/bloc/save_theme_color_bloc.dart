@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quotlum/config/theme/colors.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:quotlum/features/app/data/repository/theme_color_repository.dart';
 
 class SaveThemeColorBloc extends Bloc<SaveThemeColorEvent, void>{
   SaveThemeColorBloc() : super(null){
@@ -8,10 +8,8 @@ class SaveThemeColorBloc extends Bloc<SaveThemeColorEvent, void>{
   }
 
   _onSaveThemeColor(SaveThemeColorEvent event, Emitter<void> emit) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    
-    await prefs.setInt('appBackgroundColor', CustomColors.appBackgroundColor.value);
-    await prefs.setInt('appbarContentColor', CustomColors.appbarContentColor.value);
+    ThemeColorRepository.saveColor("appBackgroundColor", CustomColors.appBackgroundColor);
+    ThemeColorRepository.saveColor("appbarContentColor", CustomColors.appbarContentColor);
   } 
 }
 
