@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:quotlum/features/app/data/models/raw_quote.dart';
 import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 
 class QuotesClient {
@@ -9,9 +10,8 @@ class QuotesClient {
     var response = await http.get(_apiUrl);
     var decodedResponse = jsonDecode(response.body);
     
-    String text = decodedResponse["content"];
-    String author = decodedResponse["author"];
+    RawQuote rawQuote = RawQuote.fromJson(decodedResponse);
 
-    return Quote(text: text, author: author);
+    return Quote(text: rawQuote.content, author: rawQuote.author);
   }
 }
