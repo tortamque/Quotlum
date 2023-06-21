@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/bloc/get_theme_color_bloc.dart';
 import 'package:quotlum/features/app/presentation/widgets/appbar/appbar.dart';
 import 'package:quotlum/features/app/presentation/widgets/background/background.dart';
@@ -31,9 +30,7 @@ class _QuotesPageState extends State<QuotesPage> {
         children: [
           const Background(),
           QuoteCardAnimationStyle(
-            card: QuoteCardAnimation(
-              quote: Quote(text: "Default quote", author: "Some default author"),
-            ),
+            card: QuoteCardAnimation(),
           ),
         ],
       )

@@ -5,13 +5,6 @@ import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card.dart';
 
 class QuoteCardAnimation extends StatefulWidget {
-  final Quote quote;
-
-  const QuoteCardAnimation({
-    required this.quote,
-    super.key,
-  });
-
   @override
   _QuoteCardAnimationState createState() => _QuoteCardAnimationState();
 }
