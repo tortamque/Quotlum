@@ -11,7 +11,7 @@ class QuoteCardAnimation extends StatefulWidget {
 
 class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   bool swapQuotes = false;
-  Quote fetchedQuote = Quote(text: 'Tap or swipe here to create an awesome quote :D', author: 'Developer');
+  Quote fetchedQuote = Quote(text: 'Tap or swipe here to get an awesome quote :D', author: 'Developer');
 
   void _handleAction() {
     setState(() {
