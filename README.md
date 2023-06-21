@@ -10,6 +10,7 @@ I tried to build Quotlum using Clean Architecture design. Feel free to send your
 
 ## Table of Contents
 - [Features](#features)
+- [Supported platforms](#supported-platforms)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots and Demo](#screenshots-and-demo)
@@ -20,6 +21,10 @@ I tried to build Quotlum using Clean Architecture design. Feel free to send your
 ## Features
 - Fetch quotes using the [API](https://github.com/lukePeavey/quotable).
 - Change the theme color of the app to personalize the user experience.
+
+<a name="supported-platforms"/></a>
+## Supported platforms
+Quotlum is a cross-platform mobile application that supports both <b>Android</b> and <b>iOS</b> platforms.
 
 <a name="installation"/></a>
 ## Installation
@@ -59,12 +64,13 @@ https://github.com/tortamque/Quotlum/assets/90132962/d2995478-1c5e-491c-b2cf-4a4
 ## Used Packages
 The Quotlum app utilizes the following packages:
 
-| Name               | Version | Link on pub.dev                          |
-|--------------------|---------|------------------------------------------|
-| flutter_bloc       | 8.1.3   | https://pub.dev/packages/flutter_bloc     |
-| http               | 1.0.0   | https://pub.dev/packages/http             |
-| connectivity_plus  | 4.0.1   | https://pub.dev/packages/connectivity_plus|
-| get                | 4.6.5   | https://pub.dev/packages/get              |
+| Name               | Version | Link on pub.dev                             |
+|--------------------|---------|---------------------------------------------|
+| flutter_bloc       | 8.1.3   | https://pub.dev/packages/flutter_bloc       |
+| http               | 1.0.0   | https://pub.dev/packages/http               |
+| connectivity_plus  | 4.0.1   | https://pub.dev/packages/connectivity_plus  |
+| get                | 4.6.5   | https://pub.dev/packages/get                |
+| shared_preferences | 2.1.2   | https://pub.dev/packages/shared_preferences |
 
 
 <a name="licenses"/></a>
