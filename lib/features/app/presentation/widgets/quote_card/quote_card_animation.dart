@@ -5,20 +5,13 @@ import 'package:quotlum/features/app/domain/entities/classes/quote.dart';
 import 'package:quotlum/features/app/presentation/widgets/quote_card/quote_card.dart';
 
 class QuoteCardAnimation extends StatefulWidget {
-  final Quote quote;
-
-  const QuoteCardAnimation({
-    required this.quote,
-    super.key,
-  });
-
   @override
   _QuoteCardAnimationState createState() => _QuoteCardAnimationState();
 }
 
 class _QuoteCardAnimationState extends State<QuoteCardAnimation> {
   bool swapQuotes = false;
-  Quote fetchedQuote = Quote(text: 'Tap or swipe here to create an awesome quote :D', author: 'Developer');
+  Quote fetchedQuote = Quote(text: 'Tap or swipe here to get an awesome quote :D', author: 'Developer');
 
   void _handleAction() {
     setState(() {
