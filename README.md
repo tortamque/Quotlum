@@ -6,8 +6,6 @@ Quotlum is an uplifting quotes app built with Flutter and Dart, bringing daily i
 
 I tried to build Quotlum using Clean Architecture design. Feel free to send your comments and suggestions about improving my code :D 
 
-<i>Note: Quotlum is currently in active development. To stay updated, you can follow the development progress on the [develop](https://github.com/tortamque/Quotlum/tree/develop) branch of this repository. All plans and discussions regarding the app can be found in the [issues](https://github.com/tortamque/Quotlum/issues) tab, where you can contribute and track the future of Quotlum.</i>
-
 ## Table of Contents
 - [Features](#features)
 - [Supported platforms](#supported-platforms)
